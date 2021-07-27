@@ -1,0 +1,20 @@
+service: serverless-hw-aws-node
+
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  lambdaHashingVersion: 20201221
+  ecr:
+    images:
+      my-serverless-node-app:
+        path: ./
+
+  stage: dev
+  region: ap-south-1
+  profile: my-aws
+
+functions:
+  hello:
+    image:
+      name: my-serverless-node-app
